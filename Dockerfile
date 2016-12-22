@@ -19,5 +19,7 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY nginx.conf /etc/nginx/sites-enabled/default
 
 EXPOSE 80
+WORKDIR /var/www/html
+HEALTHCHECK CMD curl --fail http://localhost/ || exit 1
 
 CMD ["/usr/bin/supervisord", "-n"]
