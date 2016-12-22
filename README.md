@@ -8,7 +8,7 @@ Quick Start
 
 ```
 docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=mypass -e MYSQL_DATABASE=contao mysql
-docker run -d --name contao -p 80:80 --link mysql:mysql medialta/docker-contao
+docker build -t contao . && docker run -d --name contao -p 80:80 --link mysql:mysql contao
 ```
 
 --or--

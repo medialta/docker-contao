@@ -4,7 +4,7 @@ mysql:
         MYSQL_DATABASE: contao
         MYSQL_ROOT_PASSWORD: mypass
 contao:
-    image: medialta/docker-contao
+    build: .
     links: 
         - "mysql:mysql"
     ports:
