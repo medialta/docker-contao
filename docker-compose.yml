@@ -1,0 +1,11 @@
+mysql:
+    image: mysql
+    environment:
+        MYSQL_DATABASE: contao
+        MYSQL_ROOT_PASSWORD: mypass
+contao:
+    image: medialta/docker-contao
+    links: 
+        - "mysql:mysql"
+    ports:
+        - "80:80"

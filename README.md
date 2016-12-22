@@ -11,6 +11,12 @@ docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=mypass -e MYSQL_DATABASE=conta
 docker run -d --name contao -p 80:80 --link mysql:mysql medialta/docker-contao
 ```
 
+--or--
+
+```
+docker-compose up -d
+```
+
 Point your browser to `http://127.0.0.1`
 
 Contao Installation
