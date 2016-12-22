@@ -14,10 +14,8 @@ RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/lo
 RUN rm -rf /var/www/html/ && composer create-project contao/standard-edition /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
 
-RUN mkdir -p /var/log/supervisor
-RUN mkdir -p /run/php/
+RUN mkdir -p /var/log/supervisor /run/php
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/sites-enabled/default
 
 EXPOSE 80
